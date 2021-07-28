@@ -75,6 +75,12 @@ namespace TicketSystem.WPF
 
         private void NewTicketButton_Click(object sender, RoutedEventArgs e)
         {
+            if (this.ProjectName.SelectedItem == null)
+            {
+                MessageBox.Show("First select project!");
+                return;
+            }
+
             int currProjId = this.GetCurrentProjectId();
             new CreateNewTicket(currProjId).Show();
         }
