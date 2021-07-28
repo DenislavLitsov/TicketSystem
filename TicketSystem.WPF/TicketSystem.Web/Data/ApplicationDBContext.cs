@@ -10,23 +10,15 @@
 
     public class ApplicationDBContext : DbContext
     {
-        private ApplicationDBContext SingletonInstance;
-
         public ApplicationDBContext()
         {
         }
 
         private DbSet<User> Users { get; set; }
 
-        public ApplicationDBContext GetInstance()
-        {
-            if (SingletonInstance == null)
-            {
-                SingletonInstance = new ApplicationDBContext();
-            }
+        private DbSet<Ticket> Tickets { get; set; }
 
-            return SingletonInstance;
-        }
+        private DbSet<Project> Projects { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

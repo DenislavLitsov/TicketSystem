@@ -1,12 +1,12 @@
-﻿namespace TicketSystem.Web.Data.Domain
+﻿namespace TicketSystem.Web.Models
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using Common;
 
-    public class User : BaseModel<int>
+    public class UserViewModel
     {
-        public User()
+
+        public UserViewModel()
         {
         }
 
@@ -20,10 +20,10 @@
 
         public int? CreatedById { get; set; }
 
-        public User CreatedBy { get; set; }
+        public UserViewModel CreatedBy { get; set; }
 
-        public ICollection<Project> CreatedProjects { get; set; }
+        public ICollection<ProjectViewModel> CreatedProjects { get; set; }
 
-        public ICollection<Ticket> AssignedTickets { get; set; }
+        public ICollection<TicketViewModel> AssignedTickets { get; set; }
     }
 }

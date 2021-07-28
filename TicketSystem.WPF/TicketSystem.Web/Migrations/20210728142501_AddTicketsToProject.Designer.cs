@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TicketSystem.Web.Data;
 
 namespace TicketSystem.Web.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    partial class ApplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20210728142501_AddTicketsToProject")]
+    partial class AddTicketsToProject
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,7 +43,7 @@ namespace TicketSystem.Web.Migrations
 
                     b.HasIndex("CreatedById");
 
-                    b.ToTable("Projects");
+                    b.ToTable("Project");
                 });
 
             modelBuilder.Entity("TicketSystem.Web.Data.Domain.Ticket", b =>
@@ -51,7 +53,7 @@ namespace TicketSystem.Web.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("AssigneeId")
+                    b.Property<int>("AssigneeId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOn")
@@ -79,7 +81,7 @@ namespace TicketSystem.Web.Migrations
 
                     b.HasIndex("ProjectId");
 
-                    b.ToTable("Tickets");
+                    b.ToTable("Ticket");
                 });
 
             modelBuilder.Entity("TicketSystem.Web.Data.Domain.User", b =>
@@ -89,7 +91,7 @@ namespace TicketSystem.Web.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("CreatedById")
+                    b.Property<int>("CreatedById")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOn")
@@ -127,7 +129,9 @@ namespace TicketSystem.Web.Migrations
                 {
                     b.HasOne("TicketSystem.Web.Data.Domain.User", "Assignee")
                         .WithMany("AssignedTickets")
-                        .HasForeignKey("AssigneeId");
+                        .HasForeignKey("AssigneeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("TicketSystem.Web.Data.Domain.Project", "Project")
                         .WithMany("Tickets")
@@ -144,7 +148,9 @@ namespace TicketSystem.Web.Migrations
                 {
                     b.HasOne("TicketSystem.Web.Data.Domain.User", "CreatedBy")
                         .WithMany()
-                        .HasForeignKey("CreatedById");
+                        .HasForeignKey("CreatedById")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("CreatedBy");
                 });

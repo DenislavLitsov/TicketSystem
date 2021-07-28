@@ -14,6 +14,10 @@ namespace TicketSystem.Web
     using Data;
     using Data.Common;
     using Data.Repositories;
+    using TicketSystem.Web.Data.Seedings;
+    using TicketSystem.Web.Services;
+    using Services;
+
 
     public class Startup
     {
@@ -29,13 +33,24 @@ namespace TicketSystem.Web
         {
             services.AddControllersWithViews();
 
-            services.AddScoped(typeof(ApplicationDBContext));
+            services.AddDbContext<ApplicationDBContext>();
+
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
+            services.AddTransient(typeof(AutoMapper<,>));
+            services.AddTransient(typeof(TicketService));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            // Seed data on application startup
+            using (var serviceScope = app.ApplicationServices.CreateScope())
+            {
+                var dbContext = serviceScope.ServiceProvider.GetRequiredService<ApplicationDBContext>();
+                new SeedManager().Seed(dbContext, serviceScope.ServiceProvider);
+            }
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -57,7 +72,7 @@ namespace TicketSystem.Web
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{id?}/{action=Index}");
             });
         }
     }

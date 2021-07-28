@@ -1,13 +1,13 @@
-﻿namespace TicketSystem.Web.Data.Domain
+﻿namespace TicketSystem.Web.Models
 {
+    using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using Common;
+    using System.Linq;
+    using System.Threading.Tasks;
 
-    public class Ticket : BaseModel<int>
+    public class TicketViewModel
     {
-        public Ticket()
-        {
-        }
 
         [Required]
         [MaxLength(50)]
@@ -23,10 +23,10 @@
 
         public int? AssigneeId { get; set; }
 
-        public User Assignee { get; set; }
+        public UserViewModel Assignee { get; set; }
 
         public int ProjectId { get; set; }
 
-        public Project Project { get; set; }
+        public ProjectViewModel Project { get; set; }
     }
 }
