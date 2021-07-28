@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TicketSystem.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Ticket tracker" Height="450" Width="800">
     <Grid>
+        <ComboBox x:Name="ProjectName" HorizontalAlignment="Left" Margin="0,47,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ProjectName_SelectionChanged"/>
+        <ListBox x:Name="TicketsListBox" Margin="0,69,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="219" Height="365" SelectionChanged="TicketsListBox_SelectionChanged">
 
+        </ListBox>
+        <Button Name="NewTicketButton" Content="New Ticket" HorizontalAlignment="Left" Margin="138,49,0,0" VerticalAlignment="Top" Click="NewTicketButton_Click"/>
+        <Label Content="Subject" HorizontalAlignment="Left" Margin="224,68,0,0" VerticalAlignment="Top"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="224,122,0,0" VerticalAlignment="Top"/>
+        <Label Content="Assignee" HorizontalAlignment="Left" Margin="224,191,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="SubjectTextBox" HorizontalAlignment="Left" Margin="280,76,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="DescriptionTextBlock" HorizontalAlignment="Left" Margin="299,122,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="101"/>
+        <TextBox x:Name="Assignee" HorizontalAlignment="Left" Margin="299,204,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="390,252,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

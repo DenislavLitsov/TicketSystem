@@ -39,6 +39,7 @@ namespace TicketSystem.Web
 
             services.AddTransient(typeof(AutoMapper<,>));
             services.AddTransient(typeof(TicketService));
+            services.AddTransient(typeof(ProjectService));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -17,6 +17,7 @@
                 var props = typeof(TSource).GetProperties();
                 TypeProperties.Add(typeof(TSource), props);
             }
+
             if (TypeProperties.Keys.Any(x => x == typeof(TDestination)) == false)
             {
                 var props = typeof(TDestination).GetProperties();
@@ -35,8 +36,14 @@
                 var destProp = destProps.FirstOrDefault(x => x.Name == name);
                 if (destProp != null)
                 {
-                    var val = sourceProp.GetValue(source);
-                    destProp.SetValue(destination, val);
+                    try
+                    {
+                        var val = sourceProp.GetValue(source);
+                        destProp.SetValue(destination, val);
+                    }
+                    catch (Exception)
+                    {
+                    }
                 }
             }
         }
@@ -45,19 +52,7 @@
         {
             var dest = (TDestination)Activator.CreateInstance(typeof(TDestination));
 
-            var sourceProps = TypeProperties[typeof(TSource)];
-            var destProps = TypeProperties[typeof(TDestination)];
-
-            foreach (var sourceProp in sourceProps)
-            {
-                var name = sourceProp.Name;
-                var destProp = destProps.FirstOrDefault(x => x.Name == name);
-                if (destProp != null)
-                {
-                    var val = sourceProp.GetValue(source);
-                    destProp.SetValue(dest, val);
-                }
-            }
+            this.Map(source, dest);
 
             return dest;
         }

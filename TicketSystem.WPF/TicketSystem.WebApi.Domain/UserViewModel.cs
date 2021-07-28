@@ -1,4 +1,4 @@
-﻿namespace TicketSystem.Web.Models
+﻿namespace TicketSystem.WebApi.Domain
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;

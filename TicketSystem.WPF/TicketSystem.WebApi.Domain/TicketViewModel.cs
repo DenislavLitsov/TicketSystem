@@ -1,4 +1,4 @@
-﻿namespace TicketSystem.Web.Models
+﻿namespace TicketSystem.WebApi.Domain
 {
     using System;
     using System.Collections.Generic;
@@ -8,6 +8,9 @@
 
     public class TicketViewModel
     {
+        public TicketViewModel()
+        {
+        }
 
         [Required]
         [MaxLength(50)]

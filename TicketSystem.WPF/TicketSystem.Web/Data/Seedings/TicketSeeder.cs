@@ -19,6 +19,7 @@
         {
             var projectRepo = serviceProvider.GetRequiredService<IRepository<Project>>();
             var ticketsRepo = serviceProvider.GetRequiredService<IRepository<Ticket>>();
+            var userRepo = serviceProvider.GetRequiredService<IRepository<User>>();
 
             var projects = projectRepo
                 .GetAll()
@@ -32,12 +33,15 @@
                 {
                     for (int i = 0; i < SeedingConstants.TicketNames.Count(); i++)
                     {
+                        var user = userRepo.GetAll().First();
+
                         var ticket = new Ticket()
                         {
                             Subject = SeedingConstants.TicketNames[i],
                             Description = SeedingConstants.TicketDesriptions[i],
                             EstimatedHours = new Random().NextDouble() * 15,
                             Project = proj,
+                            Assignee = user,
                         };
 
                         ticketsRepo.Create(ticket);

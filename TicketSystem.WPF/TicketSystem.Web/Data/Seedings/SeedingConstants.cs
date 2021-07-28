@@ -19,8 +19,8 @@
 
         public static string[] TicketDesriptions = new string[]
         {
-            "500 Unauthorized",
-            "Hompage 404 not found"
+            "We get the error 500 Unauthorized",
+            "When we open the homepage we get 404 not found"
         };
     }
 }

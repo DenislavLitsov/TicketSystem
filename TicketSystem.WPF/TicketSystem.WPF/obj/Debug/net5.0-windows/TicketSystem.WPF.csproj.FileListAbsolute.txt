@@ -20,3 +20,11 @@ E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WPF\obj\Debug\
 E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WPF\obj\Debug\net5.0-windows\ref\TicketSystem.WPF.dll
 E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WPF\obj\Debug\net5.0-windows\TicketSystem.WPF.pdb
 E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WPF\obj\Debug\net5.0-windows\TicketSystem.WPF.genruntimeconfig.cache
+E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WPF\bin\Debug\net5.0-windows\Flurl.dll
+E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WPF\bin\Debug\net5.0-windows\Flurl.Http.dll
+E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WPF\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
+E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WPF\obj\Debug\net5.0-windows\TicketSystem.WPF.csproj.CopyComplete
+E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WPF\obj\Debug\net5.0-windows\CreateNewTicket.g.cs
+E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WPF\obj\Debug\net5.0-windows\CreateNewTicket.baml
+E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WPF\bin\Debug\net5.0-windows\TicketSystem.WebApi.Domain.dll
+E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WPF\bin\Debug\net5.0-windows\TicketSystem.WebApi.Domain.pdb

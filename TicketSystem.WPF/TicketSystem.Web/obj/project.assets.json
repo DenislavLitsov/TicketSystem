@@ -1724,6 +1724,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "TicketSystem.WebApi.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/TicketSystem.WebApi.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TicketSystem.WebApi.Domain.dll": {}
+        }
       }
     }
   },
@@ -6365,6 +6375,11 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "TicketSystem.WebApi.Domain/1.0.0": {
+      "type": "project",
+      "path": "../TicketSystem.WebApi.Domain/TicketSystem.WebApi.Domain.csproj",
+      "msbuildProject": "../TicketSystem.WebApi.Domain/TicketSystem.WebApi.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6373,7 +6388,8 @@
       "Microsoft.EntityFrameworkCore >= 5.0.8",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.8",
-      "Microsoft.EntityFrameworkCore.Tools >= 5.0.8"
+      "Microsoft.EntityFrameworkCore.Tools >= 5.0.8",
+      "TicketSystem.WebApi.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -6407,7 +6423,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\Projects\\C#\\Aufgabe\\TicketSystem\\TicketSystem.WPF\\TicketSystem.WebApi.Domain\\TicketSystem.WebApi.Domain.csproj": {
+              "projectPath": "E:\\Projects\\C#\\Aufgabe\\TicketSystem\\TicketSystem.WPF\\TicketSystem.WebApi.Domain\\TicketSystem.WebApi.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

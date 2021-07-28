@@ -8,14 +8,26 @@
 
     using Models;
     using TicketSystem.Web.Services;
+    using TicketSystem.WebApi.Domain;
 
     public class ProjectsController : Controller
     {
+        private readonly ProjectService projectService;
         private readonly TicketService ticketService;
 
-        public ProjectsController(TicketService ticketService)
+        public ProjectsController(ProjectService projectService,
+            TicketService ticketService)
         {
+            this.projectService = projectService;
             this.ticketService = ticketService;
+        }
+
+        [HttpGet]
+        public IActionResult GetAllProjects()
+        {
+            var projects = this.projectService.GetAllProjects();
+
+            return Json(projects);
         }
 
         [HttpGet]
@@ -29,11 +41,8 @@
         [HttpPost]
         public IActionResult Tickets(int id, TicketViewModel ticketViewModel)
         {
-
-
-            return View();
+            this.ticketService.CreateNewTicket(id, ticketViewModel);
+            return Json(Ok());
         }
-
-
     }
 }

@@ -385,3 +385,5 @@ E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.Web\obj\Debug\
 E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.Web\obj\Debug\net5.0\ref\TicketSystem.Web.dll
 E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.Web\obj\Debug\net5.0\TicketSystem.Web.pdb
 E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.Web\obj\Debug\net5.0\TicketSystem.Web.genruntimeconfig.cache
+E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.Web\bin\Debug\net5.0\TicketSystem.WebApi.Domain.dll
+E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.Web\bin\Debug\net5.0\TicketSystem.WebApi.Domain.pdb

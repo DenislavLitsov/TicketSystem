@@ -1,0 +1,12 @@
+E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WebApi.Domain\bin\Debug\net5.0\TicketSystem.WebApi.Domain.deps.json
+E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WebApi.Domain\bin\Debug\net5.0\TicketSystem.WebApi.Domain.dll
+E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WebApi.Domain\bin\Debug\net5.0\ref\TicketSystem.WebApi.Domain.dll
+E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WebApi.Domain\bin\Debug\net5.0\TicketSystem.WebApi.Domain.pdb
+E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WebApi.Domain\obj\Debug\net5.0\TicketSystem.WebApi.Domain.csproj.AssemblyReference.cache
+E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WebApi.Domain\obj\Debug\net5.0\TicketSystem.WebApi.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WebApi.Domain\obj\Debug\net5.0\TicketSystem.WebApi.Domain.AssemblyInfoInputs.cache
+E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WebApi.Domain\obj\Debug\net5.0\TicketSystem.WebApi.Domain.AssemblyInfo.cs
+E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WebApi.Domain\obj\Debug\net5.0\TicketSystem.WebApi.Domain.csproj.CoreCompileInputs.cache
+E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WebApi.Domain\obj\Debug\net5.0\TicketSystem.WebApi.Domain.dll
+E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WebApi.Domain\obj\Debug\net5.0\ref\TicketSystem.WebApi.Domain.dll
+E:\Projects\C#\Aufgabe\TicketSystem\TicketSystem.WPF\TicketSystem.WebApi.Domain\obj\Debug\net5.0\TicketSystem.WebApi.Domain.pdb

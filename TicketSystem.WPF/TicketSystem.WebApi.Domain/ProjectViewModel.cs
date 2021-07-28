@@ -1,4 +1,4 @@
-﻿namespace TicketSystem.Web.Models
+﻿namespace TicketSystem.WebApi.Domain
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -8,6 +8,9 @@
         public ProjectViewModel()
         {
         }
+
+        [Required]
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(50)]

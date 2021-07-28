@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketSystem.WPF", "TicketS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketSystem.Web", "TicketSystem.Web\TicketSystem.Web.csproj", "{1F385971-8F83-43EA-8EAE-5E09CF3223F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketSystem.WebApi.Domain", "TicketSystem.WebApi.Domain\TicketSystem.WebApi.Domain.csproj", "{2B52F01A-A739-4018-9A09-CE529A9356CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{1F385971-8F83-43EA-8EAE-5E09CF3223F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F385971-8F83-43EA-8EAE-5E09CF3223F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F385971-8F83-43EA-8EAE-5E09CF3223F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B52F01A-A739-4018-9A09-CE529A9356CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B52F01A-A739-4018-9A09-CE529A9356CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B52F01A-A739-4018-9A09-CE529A9356CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B52F01A-A739-4018-9A09-CE529A9356CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

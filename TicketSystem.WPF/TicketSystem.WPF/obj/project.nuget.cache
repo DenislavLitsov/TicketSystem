@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "j2P2Je75zM9GcHboy/YsXcfuoYi5Mt+HOxxuYfIuh2gQ3nGh14el2+wolxwPLe84GW0ZiN1JhNCNyZ8VBHuEpQ==",
+  "dgSpecHash": "c4X0fkvMnINPAtUWx8Ic6xzY08xxB0RUw+ZRQWQ/te3fNLS9meIQulcSehobMKFq6ARF/gEPWEMVJv/zuRCaSA==",
   "success": true,
   "projectFilePath": "E:\\Projects\\C#\\Aufgabe\\TicketSystem\\TicketSystem.WPF\\TicketSystem.WPF\\TicketSystem.WPF.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\denis\\.nuget\\packages\\flurl\\3.0.2\\flurl.3.0.2.nupkg.sha512",
+    "C:\\Users\\denis\\.nuget\\packages\\flurl.http\\3.2.0\\flurl.http.3.2.0.nupkg.sha512",
+    "C:\\Users\\denis\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
+    "C:\\Users\\denis\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\denis\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\denis\\.nuget\\packages\\system.text.encoding.codepages\\4.5.1\\system.text.encoding.codepages.4.5.1.nupkg.sha512"
+  ],
   "logs": []
 }
