@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TicketSystem.Data.Common\TicketSystem.Data.Common.csproj" />
+    <ProjectReference Include="..\TicketSystem.Data.Domain\TicketSystem.Data.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+    <Folder Include="Seedings\" />
+  </ItemGroup>
+
+</Project>
