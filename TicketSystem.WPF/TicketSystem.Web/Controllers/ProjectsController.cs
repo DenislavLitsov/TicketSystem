@@ -39,9 +39,9 @@
         }
 
         [HttpPost]
-        public IActionResult Tickets(int id, TicketViewModel ticketViewModel)
+        public IActionResult Tickets(int id, PostNewTicketInputModel newTicketInputModel)
         {
-            this.ticketService.CreateNewTicket(id, ticketViewModel);
+            this.ticketService.CreateNewTicket(id, newTicketInputModel);
             return Json(Ok());
         }
     }

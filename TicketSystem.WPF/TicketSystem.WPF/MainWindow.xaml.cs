@@ -27,7 +27,6 @@ namespace TicketSystem.WPF
         private IEnumerable<ProjectViewModel> projects;
         private IEnumerable<TicketViewModel> loadedTickets;
 
-
         public MainWindow()
         {
             InitializeComponent();
@@ -48,7 +47,6 @@ namespace TicketSystem.WPF
 
         private async void ProjectName_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
             this.loadedTickets = await this.flurlInstance.GetAllTicketsAsync(this.GetCurrentProjectId());
 
             this.TicketsListBox.Items.Clear();
@@ -82,7 +80,12 @@ namespace TicketSystem.WPF
             }
 
             int currProjId = this.GetCurrentProjectId();
-            new CreateNewTicket(currProjId).Show();
+            new CreateNewTicket(currProjId, this.UpdateTickets).Show();
+        }
+
+        private void UpdateTickets()
+        {
+            this.ProjectName_SelectionChanged(this, null);
         }
 
         private int GetCurrentProjectId()

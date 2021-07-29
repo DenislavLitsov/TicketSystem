@@ -22,12 +22,13 @@ namespace TicketSystem.WPF
     /// </summary>
     public partial class CreateNewTicket : Window
     {
+        private readonly Action onClose;
         private readonly int projectId;
 
-        public CreateNewTicket(int projectId)
+        public CreateNewTicket(int projectId, Action onClose)
         {
             this.projectId = projectId;
-
+            this.onClose = onClose;
             InitializeComponent();
         }
 
@@ -45,11 +46,13 @@ namespace TicketSystem.WPF
                 {
                     Name = assignee,
                 },
+                EstimatedHours = new Random().NextDouble() * 15,
                 ProjectId = projectId
             };
 
             var flurlWrapper = new FlurlWrapper();
             await flurlWrapper.CreateNewTicketAsync(ticket);
+            this.onClose();
             this.Close();
         }
     }

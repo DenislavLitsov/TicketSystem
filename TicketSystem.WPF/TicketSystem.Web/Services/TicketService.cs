@@ -16,17 +16,20 @@
         private readonly AutoMapper<Ticket, TicketViewModel> ticketMapper;
         private readonly AutoMapper<TicketViewModel, Ticket> reverseTicketMapper;
         private readonly AutoMapper<User, UserViewModel> usersMapper;
+        private readonly AutoMapper<PostNewTicketInputModel, Ticket> ticketInputModelMapper;
 
         public TicketService(
             IRepository<Ticket> ticketsRepo,
             AutoMapper<Ticket, TicketViewModel> ticketMapper,
             AutoMapper<TicketViewModel, Ticket> reverseTicketMapper,
-            AutoMapper<User, UserViewModel> usersMapper)
+            AutoMapper<User, UserViewModel> usersMapper,
+            AutoMapper<PostNewTicketInputModel, Ticket> TicketInputModelMapper)
         {
             this.ticketsRepo = ticketsRepo;
             this.ticketMapper = ticketMapper;
             this.reverseTicketMapper = reverseTicketMapper;
             this.usersMapper = usersMapper;
+            this.ticketInputModelMapper = TicketInputModelMapper;
         }
 
         public IEnumerable<TicketViewModel> GetAllTickets(int projectId)
@@ -49,18 +52,27 @@
             return result;
         }
 
-        public void CreateNewTicket(int projId, TicketViewModel ticket)
+        public void CreateNewTicket(int projId, PostNewTicketInputModel newTicketInputModel)
         {
-            var dbTicket = reverseTicketMapper.MapNew(ticket);
+            this.TrimTicketData(newTicketInputModel);
+            var dbTicket = this.ticketInputModelMapper.MapNew(newTicketInputModel);
+
             dbTicket.ProjectId = projId;
             dbTicket.Assignee = new User()
             {
-                Name = ticket.Assignee.Name,
-                EMail = ticket.Assignee.Name,
+                Name = newTicketInputModel.AssigneeName,
+                EMail = newTicketInputModel.AssigneeName,
             };
 
             this.ticketsRepo.Create(dbTicket);
             this.ticketsRepo.SaveChanges();
+        }
+
+        private void TrimTicketData(PostNewTicketInputModel dataToTrim)
+        {
+            dataToTrim.Subject = dataToTrim.Subject.Trim();
+            dataToTrim.Description = dataToTrim.Description.Trim();
+            dataToTrim.AssigneeName = dataToTrim.AssigneeName.Trim();
         }
     }
 }

@@ -35,7 +35,14 @@
         {
             var createTicketURL = EndPoints.GetCreateNewTicketURL(model.ProjectId);
 
-            await createTicketURL.PostJsonAsync(model);
+            await createTicketURL.PostUrlEncodedAsync(new
+            {
+                Subject = model.Subject,
+                Description = model.Description,
+                AssigneeName = model.Assignee.Name,
+                EstimatedHours = model.EstimatedHours,
+                ProjectId = model.ProjectId,
+            });
         }
     }
 }
