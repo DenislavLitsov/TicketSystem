@@ -13,6 +13,7 @@
     public class TicketService
     {
         private readonly IRepository<Ticket> ticketsRepo;
+        private readonly IRepository<User> usersRepo;
         private readonly AutoMapper<Ticket, TicketViewModel> ticketMapper;
         private readonly AutoMapper<TicketViewModel, Ticket> reverseTicketMapper;
         private readonly AutoMapper<User, UserViewModel> usersMapper;
@@ -20,12 +21,14 @@
 
         public TicketService(
             IRepository<Ticket> ticketsRepo,
+            IRepository<User> usersRepo,
             AutoMapper<Ticket, TicketViewModel> ticketMapper,
             AutoMapper<TicketViewModel, Ticket> reverseTicketMapper,
             AutoMapper<User, UserViewModel> usersMapper,
             AutoMapper<PostNewTicketInputModel, Ticket> TicketInputModelMapper)
         {
             this.ticketsRepo = ticketsRepo;
+            this.usersRepo = usersRepo;
             this.ticketMapper = ticketMapper;
             this.reverseTicketMapper = reverseTicketMapper;
             this.usersMapper = usersMapper;
@@ -58,14 +61,35 @@
             var dbTicket = this.ticketInputModelMapper.MapNew(newTicketInputModel);
 
             dbTicket.ProjectId = projId;
-            dbTicket.Assignee = new User()
-            {
-                Name = newTicketInputModel.AssigneeName,
-                EMail = newTicketInputModel.AssigneeName,
-            };
+            AssignUser(dbTicket, newTicketInputModel.AssigneeName);
 
             this.ticketsRepo.Create(dbTicket);
             this.ticketsRepo.SaveChanges();
+        }
+
+        private void AssignUser(Ticket ticket, string userName)
+        {
+            // To names are compared in upper for Normalized data
+            var user = this.usersRepo
+                .GetAll()
+                .FirstOrDefault(x => x.Name.ToUpper() == userName.ToUpper());
+
+            if (user != null)
+            {
+                ticket.AssigneeId = user.Id;
+                ticket.Assignee = user;
+            }
+            else
+            {
+                var newUser = new User()
+                {
+                    Name = userName,
+                    EMail = userName,
+                };
+
+                this.usersRepo.Create(newUser);
+                ticket.Assignee = newUser;
+            }
         }
 
         private void TrimTicketData(PostNewTicketInputModel dataToTrim)
