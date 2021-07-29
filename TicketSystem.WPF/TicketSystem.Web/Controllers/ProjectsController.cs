@@ -23,7 +23,7 @@
         }
 
         [HttpGet]
-        public IActionResult GetAllProjects()
+        public IActionResult Index()
         {
             var projects = this.projectService.GetAllProjects();
 

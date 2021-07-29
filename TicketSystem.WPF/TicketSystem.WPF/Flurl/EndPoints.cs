@@ -6,7 +6,7 @@
 
         public static string GetAllProjects()
         {
-            var res = $"{domain}/Projects/0/GetAllProjects";
+            var res = $"{domain}/Projects";
             return res;
         }
 
